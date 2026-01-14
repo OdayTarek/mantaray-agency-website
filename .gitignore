@@ -1,0 +1,28 @@
+# Dependencies
+node_modules
+
+# Build outputs
+.next
+out
+dist
+
+# Environment
+.env
+.env*.local
+
+# Vercel
+.vercel
+
+# Debug
+npm-debug.log
+yarn-error.log
+bun-debug.log
+
+# IDE
+.vscode
+.idea
+*.swp
+.DS_Store
+
+# Turbo
+.turbo
