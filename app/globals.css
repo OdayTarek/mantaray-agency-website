@@ -892,14 +892,6 @@ body::before {
   overflow: hidden;
 }
 
-.project-image::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--primary);
-  opacity: 0.3;
-}
-
 .project-body {
   padding: var(--space-6);
 }
