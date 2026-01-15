@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useTranslations } from '@/lib/useTranslations'
 import { CodeEditorMockup } from '@/components/CodeEditorMockup'
+import { getProjectMockup } from '@/components/projects/mockups'
 
 export default function HomePage() {
   const t = useTranslations()
@@ -155,7 +156,9 @@ export default function HomePage() {
                 href={`/projects/${['pulse', 'bloom', 'atlas'][i]}`}
                 className="project-card"
               >
-                <div className="project-image"></div>
+                <div className="project-image">
+                  {getProjectMockup(['pulse', 'bloom', 'atlas'][i])}
+                </div>
                 <div className="project-body">
                   <span className="project-tag">{project.tag}</span>
                   <h3 className="project-title">{project.title}</h3>
