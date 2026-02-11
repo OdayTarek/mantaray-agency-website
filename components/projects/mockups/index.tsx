@@ -7,6 +7,7 @@ import { NomadMockup } from "./Nomad";
 import { VoltMockup } from "./Volt";
 import { MedixMockup } from "./Medix";
 import { BaristaMockup } from "./Barista";
+import { LuxeMockup } from "./Luxe";
 
 // Generic mockup for projects without specific designs
 function GenericMockup({ name, gradient }: { name: string; gradient: string }) {
@@ -131,6 +132,10 @@ const mockupConfig = {
     component: BaristaMockup,
     gradient: "linear-gradient(135deg, #1a5632 0%, #2d7a4f 100%)",
   },
+  luxe: {
+    component: LuxeMockup,
+    gradient: "linear-gradient(135deg, #8b6f47 0%, #d4a574 100%)",
+  },
 };
 
 // Variant configurations for each project
@@ -178,6 +183,12 @@ export const projectVariants: Record<string, { id: string; label: string }[]> =
       { id: "services", label: "Services" },
       { id: "gallery", label: "Gallery" },
     ],
+    luxe: [
+      { id: "home", label: "Home" },
+      { id: "products", label: "Products" },
+      { id: "cart", label: "Cart" },
+      { id: "checkout", label: "Checkout" },
+    ],
   };
 
 export function getProjectMockup(slug: string, variant?: string) {
@@ -204,4 +215,5 @@ export {
   VoltMockup,
   MedixMockup,
   BaristaMockup,
+  LuxeMockup,
 };

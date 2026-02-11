@@ -127,6 +127,13 @@ const projectMeta: Record<
     tech: ["Next.js", "React", "Node.js", "Stripe"],
     related: ["bloom", "atlas"],
   },
+  luxe: {
+    title: "Luxe Threads",
+    timelineEn: "14 days",
+    timelineAr: "14 يوماً",
+    tech: ["React", "Node.js", "MongoDB", "Stripe"],
+    related: ["bloom", "bazaar"],
+  },
 };
 
 export default function ProjectDetailPage() {

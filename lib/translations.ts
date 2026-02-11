@@ -161,6 +161,7 @@ export const translations = {
         ecommerce: "E-commerce",
         saas: "SaaS",
         travel: "Travel",
+        fashion: "Fashion",
         fitness: "Fitness",
         b2b: "B2B",
       },
@@ -426,6 +427,40 @@ export const translations = {
               title: "Lead Generation",
               description:
                 "Conversion-optimized layout with strategic CTAs and WhatsApp integration.",
+            },
+          ],
+        },
+        luxe: {
+          title: "Luxe Threads",
+          industry: "Fashion E-commerce",
+          description:
+            "Boutique fashion e-commerce platform offering curated, quality-tested clothing with same-day delivery in select areas.",
+          challenge:
+            "A boutique fashion brand needed a digital storefront that could convey the tactile quality of their curated pieces while providing a seamless mobile-first shopping experience for their Arabic-speaking customer base.",
+          approach:
+            "We designed an RTL-first e-commerce experience with warm, feminine aesthetics, trust-building elements, and a streamlined checkout flow optimized for the local market.",
+          solution:
+            "We built a mobile-first RTL e-commerce platform with product curation, real-time cart management, same-day delivery tracking, and a checkout flow optimized for the Egyptian market with WhatsApp integration.",
+          capabilities: [
+            {
+              title: "RTL E-commerce",
+              description:
+                "Fully Arabic-first shopping experience with right-to-left layout and localized content.",
+            },
+            {
+              title: "Smart Cart",
+              description:
+                "Dynamic cart with real-time updates, quantity management, and instant subtotal calculations.",
+            },
+            {
+              title: "Trust Building",
+              description:
+                "Quality guarantee badges, delivery promises, and customer testimonials for conversion.",
+            },
+            {
+              title: "Local Delivery",
+              description:
+                "Same-day delivery integration for select areas with real-time order tracking.",
             },
           ],
         },
@@ -756,6 +791,7 @@ export const translations = {
         ecommerce: "التجارة الإلكترونية",
         saas: "البرمجيات كخدمة",
         travel: "السفر",
+        fashion: "أزياء",
         fitness: "اللياقة البدنية",
         b2b: "أعمال",
       },
@@ -1018,6 +1054,40 @@ export const translations = {
               title: "توليد العملاء المحتملين",
               description:
                 "تصميم محسن للتحويل مع دعوات لاتخاذ إجراء استراتيجية وتكامل واتساب.",
+            },
+          ],
+        },
+        luxe: {
+          title: "لوكس ثريدز",
+          industry: "تجارة إلكترونية للأزياء",
+          description:
+            "منصة أزياء إلكترونية تقدم ملابس مختارة ومضمونة الجودة مع خدمة توصيل في نفس اليوم في مناطق محددة.",
+          challenge:
+            "احتاجت علامة تجارية للأزياء إلى متجر رقمي يمكنه نقل الجودة الملموسة لقطعها المختارة مع توفير تجربة تسوق سلسة وسهلة الاستخدام لعملائها الناطقين بالعربية.",
+          approach:
+            "قمنا بتصميم تجربة تجارة إلكترونية عربية بالكامل بلمسات جمالية دافئة، وعناصر بناء الثقة، وتدفق دفع مبسط ومحسن للسوق المحلي.",
+          solution:
+            "أطلقنا منصة تجارة إلكترونية عربية متوافقة مع الهواتف، مع إدارة سلة التسوق في الوقت الفعلي، وتتبع التوصيل في نفس اليوم، ونظام دفع محسن للسوق المصري مع دمج الواتساب.",
+          capabilities: [
+            {
+              title: "تجارة إلكترونية عربية",
+              description:
+                "تجربة تسوق كاملة باللغة العربية مع تصميم من اليمين لليسار ومحتوى محلي.",
+            },
+            {
+              title: "سلة ذكية",
+              description:
+                "سلة ديناميكية مع تحديثات فورية، وإدارة الكميات، وحساب الإجماليات لحظيًا.",
+            },
+            {
+              title: "بناء الثقة",
+              description:
+                "شارات ضمان الجودة، ووعود التوصيل، وآراء العملاء لزيادة معدل التحويل.",
+            },
+            {
+              title: "توصيل محلي",
+              description:
+                "دمج خدمة التوصيل في نفس اليوم لمناطق مختارة مع تتبع الطلبات في الوقت الفعلي.",
             },
           ],
         },

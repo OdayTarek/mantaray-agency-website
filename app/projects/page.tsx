@@ -55,6 +55,13 @@ const projects = [
     timeline: "16 days",
     tech: ["Next.js", "React", "Node.js"],
   },
+  {
+    slug: "luxe",
+    titleKey: 7,
+    industry: "fashion",
+    timeline: "14 days",
+    tech: ["React", "Node.js", "MongoDB"],
+  },
 ];
 
 const projectNames = {
@@ -66,6 +73,7 @@ const projectNames = {
     "Volt Fitness",
     "Medix Telehealth",
     "Barista Pro",
+    "Luxe Threads",
   ],
   ar: [
     "بولس المصرفي",
@@ -75,6 +83,7 @@ const projectNames = {
     "فولت للياقة",
     "ميديكس للطب عن بعد",
     "باريستا برو",
+    "لوكس ثريدز",
   ],
 };
 
@@ -87,6 +96,7 @@ const projectDescriptions = {
     "Fitness tracking app with personalized workout plans and nutrition guidance.",
     "Telemedicine platform connecting patients with healthcare providers.",
     "Premium B2B platform for commercial coffee equipment sales, maintenance, and barista training.",
+    "Boutique fashion e-commerce platform with curated collections, same-day delivery, and personalized shopping experience.",
   ],
   ar: [
     "لوحة تحكم حديثة مع تحليلات فورية ورؤى مدعومة بالذكاء الاصطناعي للمؤسسات المالية.",
@@ -96,6 +106,7 @@ const projectDescriptions = {
     "تطبيق تتبع اللياقة البدنية مع خطط تمارين مخصصة وإرشادات غذائية.",
     "منصة الطب عن بعد تربط المرضى بمقدمي الرعاية الصحية.",
     "منصة B2B متخصصة في بيع معدات القهوة التجارية والصيانة وتدريب الباريستا.",
+    "منصة أزياء إلكترونية فاخرة مع مجموعات مختارة بعناية وتوصيل في نفس اليوم وتجربة تسوق شخصية.",
   ],
 };
 

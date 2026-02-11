@@ -288,7 +288,7 @@ Task 9: Final QA + translations review
 
 ---
 
-- [ ] 2. Create Barista Pro Mockup (B2B Equipment — Amara Coffee)
+- [x] 2. Create Barista Pro Mockup (B2B Equipment — Amara Coffee)
 
   **What to do**:
   - Create `components/projects/mockups/Barista.tsx` — interactive B2B coffee equipment mockup
