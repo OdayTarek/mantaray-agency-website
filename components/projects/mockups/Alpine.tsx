@@ -286,8 +286,8 @@ export function AlpineMockup({ variant = "home" }: AlpineMockupProps) {
             {variant === "cabins" && <CabinsView />}
             {variant === "gallery" && <GalleryView />}
             {variant === "contact" && <ContactView />}
+            <AlpineFooter />
           </div>
-          <AlpineFooter />
         </div>
       </MockupFrame>
 
@@ -470,7 +470,13 @@ function HomeView() {
     <div className="home-view">
       {/* Hero Section */}
       <section className="hero">
-        <div className="hero-bg" />
+        <div className="hero-bg">
+          <img
+            src="/mockups/alpine/hero-exterior.jpeg"
+            alt="Luxury private cabin exterior at sunset"
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
+        </div>
         <div className="hero-overlay" />
         <div className="hero-content">
           <div className="hero-label">
@@ -527,29 +533,38 @@ function HomeView() {
         <div className="about-container">
           <div className="about-images">
             <div className="about-img about-img--tall">
-              <div
-                className="img-placeholder"
+              <img
+                src="/mockups/alpine/indoor-pool-1.jpeg"
+                alt="Luxurious indoor heated pool"
                 style={{
-                  background:
-                    "linear-gradient(160deg, #5C4A32 0%, #8B6C4D 50%, #3a2a1a 100%)",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  borderRadius: "6px",
                 }}
               />
             </div>
             <div className="about-img">
-              <div
-                className="img-placeholder"
+              <img
+                src="/mockups/alpine/lounge-swing.jpeg"
+                alt="Elegant lounge area with rattan swing chair"
                 style={{
-                  background:
-                    "linear-gradient(135deg, #2D2926 0%, #8B6C4D 100%)",
+                  width: "100%",
+                  height: "140px",
+                  objectFit: "cover",
+                  borderRadius: "6px",
                 }}
               />
             </div>
             <div className="about-img">
-              <div
-                className="img-placeholder"
+              <img
+                src="/mockups/alpine/living-area-2.jpeg"
+                alt="Spacious living area with modern furnishings"
                 style={{
-                  background:
-                    "linear-gradient(135deg, #C9A96E 0%, #5C4A32 100%)",
+                  width: "100%",
+                  height: "140px",
+                  objectFit: "cover",
+                  borderRadius: "6px",
                 }}
               />
             </div>
@@ -620,7 +635,13 @@ function HomeView() {
 
       {/* Experience Parallax Section */}
       <section className="experience-section">
-        <div className="experience-bg" />
+        <div className="experience-bg">
+          <img
+            src="/mockups/alpine/living-moody.jpeg"
+            alt="Atmospheric cabin interior with pool and hanging chair"
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
+        </div>
         <div className="experience-overlay" />
         <div className="experience-content">
           <div className="experience-text">
@@ -694,30 +715,8 @@ function HomeView() {
         .hero-bg {
           position: absolute;
           inset: 0;
-          background: linear-gradient(
-            135deg,
-            #2d2926 0%,
-            #5c4a32 30%,
-            #8b6c4d 60%,
-            #3a2a1a 100%
-          );
           z-index: 1;
-        }
-        .hero-bg::after {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background:
-            radial-gradient(
-              ellipse at 70% 30%,
-              rgba(201, 169, 110, 0.15) 0%,
-              transparent 60%
-            ),
-            radial-gradient(
-              ellipse at 20% 80%,
-              rgba(92, 74, 50, 0.3) 0%,
-              transparent 50%
-            );
+          overflow: hidden;
         }
         .hero-overlay {
           position: absolute;
@@ -991,24 +990,8 @@ function HomeView() {
         .experience-bg {
           position: absolute;
           inset: 0;
-          background: linear-gradient(
-            160deg,
-            #1a1a1a 0%,
-            #3a2a1a 40%,
-            #5c4a32 70%,
-            #2d2926 100%
-          );
           z-index: 1;
-        }
-        .experience-bg::after {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: radial-gradient(
-            ellipse at 60% 40%,
-            rgba(201, 169, 110, 0.08) 0%,
-            transparent 70%
-          );
+          overflow: hidden;
         }
         .experience-overlay {
           position: absolute;
@@ -1290,11 +1273,18 @@ function CabinsView() {
 // ─── Cabin Card Sub-component ───────────────────────────────────────────────
 
 function CabinCard({ cabin, index }: { cabin: Cabin; index: number }) {
-  const gradients = [
-    "linear-gradient(135deg, #5C4A32 0%, #8B6C4D 50%, #2D2926 100%)",
-    "linear-gradient(135deg, #2D2926 0%, #5C4A32 60%, #C9A96E 100%)",
-    "linear-gradient(135deg, #3a2a1a 0%, #8B6C4D 40%, #5C4A32 100%)",
-    "linear-gradient(135deg, #1a1a1a 0%, #5C4A32 50%, #8B6C4D 100%)",
+  const cabinImages = [
+    "/mockups/alpine/hero-exterior.jpeg",
+    "/mockups/alpine/cabin-daylight.jpeg",
+    "/mockups/alpine/cabin-night.jpeg",
+    "/mockups/alpine/pool-lounge.jpeg",
+  ];
+
+  const cabinImageAlts = [
+    "Luxury hut with indoor and outdoor heated pools",
+    "Spacious hut with master bedrooms and pool",
+    "Elegant hut with bedrooms and indoor heated pool",
+    "Premium hut with glass indoor pool and jacuzzi",
   ];
 
   const badgeColors: Record<string, string> = {
@@ -1306,9 +1296,11 @@ function CabinCard({ cabin, index }: { cabin: Cabin; index: number }) {
   return (
     <article className="cabin-card">
       <div className="cabin-card-image">
-        <div
+        <img
           className="cabin-img-placeholder"
-          style={{ background: gradients[index % gradients.length] }}
+          src={cabinImages[index % cabinImages.length]}
+          alt={cabinImageAlts[index % cabinImageAlts.length]}
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
         />
         {cabin.badge && (
           <span
@@ -1489,52 +1481,56 @@ function GalleryView() {
   const galleryItems = [
     {
       caption: "Aerial Pool View",
-      gradient:
-        "linear-gradient(135deg, #2D2926 0%, #8B6C4D 50%, #5C4A32 100%)",
+      image: "/mockups/alpine/pool-aerial.jpeg",
+      alt: "Aerial view of indoor pool with lounge area",
       wide: true,
     },
     {
       caption: "Modern Staircase",
-      gradient: "linear-gradient(160deg, #5C4A32 0%, #C9A96E 100%)",
+      image: "/mockups/alpine/staircase.jpeg",
+      alt: "Interior staircase with modern design",
       wide: false,
     },
     {
       caption: "Cozy Living Area",
-      gradient: "linear-gradient(135deg, #3a2a1a 0%, #8B6C4D 100%)",
+      image: "/mockups/alpine/living-cozy.jpeg",
+      alt: "Cozy living area with warm lighting",
       wide: false,
     },
     {
       caption: "Garden Panorama",
-      gradient:
-        "linear-gradient(135deg, #1a1a1a 0%, #5C4A32 50%, #8B6C4D 100%)",
+      image: "/mockups/alpine/garden-view.jpeg",
+      alt: "Panoramic view of pool and garden from inside the cabin",
       wide: true,
     },
     {
       caption: "Loft Bedroom",
-      gradient: "linear-gradient(160deg, #8B6C4D 0%, #2D2926 100%)",
+      image: "/mockups/alpine/bedroom-loft.jpeg",
+      alt: "Comfortable loft bedroom with ambient lighting",
       wide: false,
     },
     {
       caption: "Designer Kitchen",
-      gradient:
-        "linear-gradient(135deg, #C9A96E 0%, #5C4A32 50%, #1a1a1a 100%)",
+      image: "/mockups/alpine/kitchen.jpeg",
+      alt: "Modern kitchen with quality finishes",
       wide: false,
     },
     {
       caption: "Indoor Pool Night",
-      gradient:
-        "linear-gradient(135deg, #1a1a1a 0%, #3a2a1a 40%, #C9A96E 100%)",
+      image: "/mockups/alpine/indoor-pool-2.jpeg",
+      alt: "Atmospheric indoor pool with ambient lighting",
       wide: true,
     },
     {
       caption: "Exterior at Dusk",
-      gradient:
-        "linear-gradient(160deg, #2D2926 0%, #8B6C4D 60%, #C9A96E 100%)",
+      image: "/mockups/alpine/cabin-sunset.jpeg",
+      alt: "Cabin exterior at sunset",
       wide: false,
     },
     {
       caption: "Lounge Swing",
-      gradient: "linear-gradient(135deg, #5C4A32 0%, #1a1a1a 100%)",
+      image: "/mockups/alpine/lounge-swing.jpeg",
+      alt: "Lounge area with swing chair",
       wide: false,
     },
   ];
@@ -1563,9 +1559,11 @@ function GalleryView() {
               key={index}
               className={`gallery-item ${item.wide ? "gallery-item--wide" : ""}`}
             >
-              <div
+              <img
                 className="gallery-img"
-                style={{ background: item.gradient }}
+                src={item.image}
+                alt={item.alt}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
               <div className="gallery-overlay">
                 <div className="gallery-caption">
@@ -1706,7 +1704,13 @@ function ContactView() {
     <div className="contact-view">
       {/* CTA Hero */}
       <section className="contact-hero">
-        <div className="contact-hero-bg" />
+        <div className="contact-hero-bg">
+          <img
+            src="/mockups/alpine/indoor-pool-2.jpeg"
+            alt="Atmospheric indoor pool with ambient lighting"
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
+        </div>
         <div className="contact-hero-overlay" />
         <div className="contact-hero-content">
           <div
@@ -1766,7 +1770,18 @@ function ContactView() {
               </div>
             </div>
             <div className="map-placeholder">
-              <div className="map-gradient" />
+              <img
+                src="/mockups/alpine/garden-tropical.jpeg"
+                alt="European Hut grounds with tropical garden"
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  opacity: 0.5,
+                }}
+              />
               <div className="map-pin">
                 <MapPinIcon />
               </div>
@@ -1877,24 +1892,8 @@ function ContactView() {
         .contact-hero-bg {
           position: absolute;
           inset: 0;
-          background: linear-gradient(
-            135deg,
-            #1a1a1a 0%,
-            #3a2a1a 30%,
-            #5c4a32 60%,
-            #2d2926 100%
-          );
           z-index: 1;
-        }
-        .contact-hero-bg::after {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: radial-gradient(
-            ellipse at 50% 50%,
-            rgba(201, 169, 110, 0.12) 0%,
-            transparent 60%
-          );
+          overflow: hidden;
         }
         .contact-hero-overlay {
           position: absolute;
@@ -2072,17 +2071,6 @@ function ContactView() {
           display: flex;
           align-items: center;
           justify-content: center;
-        }
-        .map-gradient {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(
-            135deg,
-            #3a2a1a 0%,
-            #5c4a32 50%,
-            #8b6c4d 100%
-          );
-          opacity: 0.5;
         }
         .map-pin {
           position: relative;

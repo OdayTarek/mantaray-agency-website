@@ -18,8 +18,8 @@ export function LuxeMockup({ variant = "home" }: LuxeMockupProps) {
             {variant === "products" && <ProductsView />}
             {variant === "cart" && <CartView />}
             {variant === "checkout" && <CheckoutView />}
+            <LuxeFooter />
           </div>
-          <LuxeFooter />
         </div>
       </MockupFrame>
 
@@ -83,7 +83,11 @@ function LuxeHeader({ variant }: { variant: LuxeVariant }) {
     <nav className="navbar">
       <div className="nav-container">
         <div className="nav-logo">
-          <span className="logo-icon">L</span>
+          <img
+            src="/mockups/luxe/logo.jpg"
+            alt="Luxe Threads"
+            style={{ height: "36px", borderRadius: "6px" }}
+          />
           <span className="logo-text">Luxe Threads</span>
         </div>
         <ul className="nav-links">
@@ -273,7 +277,16 @@ function HomeView() {
           </div>
           <div className="hero-image">
             <div className="image-placeholder">
-              <div className="image-overlay"></div>
+              <img
+                src="/mockups/luxe/image.jpg"
+                alt="Luxe Threads fashion collection"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  borderRadius: "20px",
+                }}
+              />
             </div>
             <div className="hero-float-card">
               <div className="icon">
@@ -351,7 +364,17 @@ function HomeView() {
             </div>
           </div>
           <div className="delivery-visual">
-            <div className="visual-rect"></div>
+            <img
+              src="/mockups/luxe/image2.jpg"
+              alt="Luxe Threads delivery"
+              style={{
+                width: "100%",
+                height: "300px",
+                objectFit: "cover",
+                borderRadius: "20px",
+                boxShadow: "0 20px 50px rgba(0,0,0,0.3)",
+              }}
+            />
           </div>
         </div>
       </section>
@@ -474,10 +497,10 @@ function HomeView() {
         .image-placeholder {
           width: 100%;
           aspect-ratio: 4/3;
-          background: linear-gradient(135deg, #e8ddd0, #d4a574);
           border-radius: 20px;
           position: relative;
           box-shadow: 0 20px 60px rgba(139, 111, 71, 0.15);
+          overflow: hidden;
         }
         .hero-float-card {
           position: absolute;
@@ -623,12 +646,10 @@ function HomeView() {
           justify-content: center;
           font-weight: 700;
         }
-        .delivery-visual .visual-rect {
+        .delivery-visual {
           width: 100%;
-          height: 300px;
-          background: rgba(255, 255, 255, 0.1);
+          overflow: hidden;
           border-radius: 20px;
-          backdrop-filter: blur(5px);
         }
         .about {
           padding: 60px 30px;
@@ -676,6 +697,13 @@ function HomeView() {
   );
 }
 
+const productImages: Record<string, string> = {
+  "1": "/mockups/luxe/jacket.jpg",
+  "2": "/mockups/luxe/jacket2.jpg",
+  "3": "/mockups/luxe/coat.jpg",
+  "4": "/mockups/luxe/jacket3.jpg",
+};
+
 function ProductsView() {
   const { products } = luxeData;
 
@@ -690,17 +718,10 @@ function ProductsView() {
           {products.map((product) => (
             <div key={product.id} className="product-card">
               <div className="product-img">
-                <div
-                  className="img-placeholder"
-                  style={{
-                    background: `linear-gradient(135deg, ${
-                      product.id === "1"
-                        ? "#e8ddd0, #d4a574"
-                        : product.id === "2"
-                          ? "#f0d5bc, #a0522d"
-                          : "#faf5ef, #8b6f47"
-                    })`,
-                  }}
+                <img
+                  src={productImages[product.id] || "/mockups/luxe/jacket.jpg"}
+                  alt={product.name}
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
                 {product.badge && (
                   <span className="product-tag">{product.badge}</span>
@@ -772,9 +793,10 @@ function ProductsView() {
           position: relative;
           aspect-ratio: 3/4;
         }
-        .img-placeholder {
+        .product-img img {
           width: 100%;
           height: 100%;
+          object-fit: cover;
         }
         .product-tag {
           position: absolute;
@@ -902,11 +924,16 @@ function CartView() {
             return (
               <div key={item.id} className="cart-item">
                 <div className="cart-item-img">
-                  <div
+                  <img
+                    src={
+                      productImages[item.productId] ||
+                      "/mockups/luxe/jacket.jpg"
+                    }
+                    alt={product.name}
                     style={{
                       width: "100%",
                       height: "100%",
-                      background: "linear-gradient(135deg, #e8ddd0, #d4a574)",
+                      objectFit: "cover",
                     }}
                   />
                 </div>

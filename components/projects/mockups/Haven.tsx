@@ -298,8 +298,8 @@ export function HavenMockup({ variant = "home" }: HavenMockupProps) {
             {variant === "cabins" && <CabinsView />}
             {variant === "experience" && <ExperienceView />}
             {variant === "booking" && <BookingView />}
+            <HavenFooter />
           </div>
-          <HavenFooter />
         </div>
       </MockupFrame>
 
@@ -564,7 +564,18 @@ function HomeView() {
             </div>
           </div>
           <div className="hero-image">
-            <div className="hero-img-placeholder" />
+            <div className="hero-img-placeholder">
+              <img
+                src="/mockups/haven/hero-exterior.jpeg"
+                alt="European Hut cabin exterior with pool and lush landscape"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  display: "block",
+                }}
+              />
+            </div>
             <div className="hero-badge">
               <MapPinIcon />
               <div className="badge-text">
@@ -603,13 +614,19 @@ function HomeView() {
 
           <div className="highlight-row">
             <div className="highlight-image">
-              <div
-                className="img-placeholder"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #7C8C6E 0%, #9AAD8C 50%, #C9A96E 100%)",
-                }}
-              />
+              <div className="img-placeholder">
+                <img
+                  src="/mockups/haven/cabin-daylight.jpeg"
+                  alt="A-frame cabin exterior with garden and pool in daylight"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    display: "block",
+                    borderRadius: "20px",
+                  }}
+                />
+              </div>
             </div>
             <div className="highlight-content">
               <span className="highlight-label">Unique Architecture</span>
@@ -637,13 +654,19 @@ function HomeView() {
 
           <div className="highlight-row reverse">
             <div className="highlight-image">
-              <div
-                className="img-placeholder"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #4A5D3E 0%, #7C8C6E 50%, #F5F0EB 100%)",
-                }}
-              />
+              <div className="img-placeholder">
+                <img
+                  src="/mockups/haven/indoor-pool-2.jpeg"
+                  alt="Indoor heated pool with swing chair and glass A-frame walls"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    display: "block",
+                    borderRadius: "20px",
+                  }}
+                />
+              </div>
             </div>
             <div className="highlight-content">
               <span className="highlight-label">Swim Year-Round</span>
@@ -671,13 +694,19 @@ function HomeView() {
 
           <div className="highlight-row">
             <div className="highlight-image">
-              <div
-                className="img-placeholder"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #C9A96E 0%, #F5F0EB 50%, #7C8C6E 100%)",
-                }}
-              />
+              <div className="img-placeholder">
+                <img
+                  src="/mockups/haven/living-area-1.jpeg"
+                  alt="Spacious A-frame living area with curved sofa and indoor pool"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    display: "block",
+                    borderRadius: "20px",
+                  }}
+                />
+              </div>
             </div>
             <div className="highlight-content">
               <span className="highlight-label">Designed for Comfort</span>
@@ -971,6 +1000,7 @@ function HomeView() {
           width: 100%;
           height: 280px;
           border-radius: 20px;
+          overflow: hidden;
         }
 
         .highlight-content {
@@ -1066,11 +1096,18 @@ function HomeView() {
 // ─── Cabin Card (shared) ────────────────────────────────────────────────────
 
 function CabinCard({ cabin, index }: { cabin: Cabin; index: number }) {
-  const gradients = [
-    "linear-gradient(135deg, #4A5D3E 0%, #7C8C6E 60%, #C9A96E 100%)",
-    "linear-gradient(135deg, #C9A96E 0%, #F5F0EB 50%, #7C8C6E 100%)",
-    "linear-gradient(135deg, #7C8C6E 0%, #4A5D3E 50%, #2C3E2D 100%)",
-    "linear-gradient(135deg, #2C3E2D 0%, #7C8C6E 40%, #C9A96E 100%)",
+  const cabinImages = [
+    "/mockups/haven/cabin-night.jpeg",
+    "/mockups/haven/cabin-sunset.jpeg",
+    "/mockups/haven/indoor-pool-1.jpeg",
+    "/mockups/haven/living-area-3.jpeg",
+  ];
+
+  const cabinAlts = [
+    "Cabin 1 — exterior at night with indoor and outdoor heated pools",
+    "Cabin 2 — A-frame cabin at sunset",
+    "Cabin 3 — indoor heated swimming pool",
+    "Cabin 4 — premium living area with glass pool",
   ];
 
   const badgeColors: Record<string, string> = {
@@ -1082,10 +1119,18 @@ function CabinCard({ cabin, index }: { cabin: Cabin; index: number }) {
   return (
     <div className="cabin-card">
       <div className="cabin-card-image">
-        <div
-          className="cabin-img"
-          style={{ background: gradients[index % 4] }}
-        />
+        <div className="cabin-img">
+          <img
+            src={cabinImages[index % 4]}
+            alt={cabinAlts[index % 4]}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              display: "block",
+            }}
+          />
+        </div>
         {cabin.badge && (
           <span
             className="cabin-badge"
@@ -1604,41 +1649,54 @@ function ExperienceView() {
               {
                 label: "Pool & Garden View",
                 wide: true,
-                gradient:
-                  "linear-gradient(135deg, #7C8C6E 0%, #4A5D3E 50%, #C9A96E 100%)",
+                image: "/mockups/haven/garden-view.jpeg",
+                alt: "Panoramic view from inside A-frame cabin overlooking pool and garden",
               },
               {
                 label: "Pool Lounge",
                 wide: false,
-                gradient: "linear-gradient(135deg, #4A5D3E 0%, #7C8C6E 100%)",
+                image: "/mockups/haven/lounge-swing.jpeg",
+                alt: "Indoor lounge with swing chair, sofas, and pool",
               },
               {
                 label: "Loft Bedroom",
                 wide: false,
-                gradient: "linear-gradient(135deg, #C9A96E 0%, #F5F0EB 100%)",
+                image: "/mockups/haven/bedroom-loft.jpeg",
+                alt: "Loft bedroom with A-frame wooden ceiling and ambient lighting",
               },
               {
                 label: "Night View",
                 wide: false,
-                gradient: "linear-gradient(135deg, #2C3E2D 0%, #4A5D3E 100%)",
+                image: "/mockups/haven/cabin-side-night.jpeg",
+                alt: "A-frame cabin illuminated at night with rooftop terrace",
               },
               {
                 label: "Living Area",
                 wide: true,
-                gradient:
-                  "linear-gradient(135deg, #F5F0EB 0%, #7C8C6E 50%, #4A5D3E 100%)",
+                image: "/mockups/haven/living-moody.jpeg",
+                alt: "Moody living area with curved sofa and indoor pool behind glass",
               },
               {
                 label: "Kitchen",
                 wide: false,
-                gradient: "linear-gradient(135deg, #C9A96E 0%, #7C8C6E 100%)",
+                image: "/mockups/haven/kitchen.jpeg",
+                alt: "Kitchenette with white cabinets and wooden A-frame ceiling",
               },
             ].map((item, i) => (
               <div
                 key={i}
                 className={`gallery-item ${item.wide ? "wide" : ""}`}
-                style={{ background: item.gradient }}
               >
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    display: "block",
+                  }}
+                />
                 <div className="gallery-overlay">
                   <span>{item.label}</span>
                 </div>

@@ -18,8 +18,8 @@ export function BaristaMockup({ variant = "home" }: BaristaMockupProps) {
             {variant === "products" && <ProductsView />}
             {variant === "services" && <ServicesView />}
             {variant === "gallery" && <GalleryView />}
+            <BaristaFooter />
           </div>
-          <BaristaFooter />
         </div>
       </MockupFrame>
 
@@ -114,7 +114,18 @@ function BaristaHeader({ variant }: { variant: BaristaVariant }) {
       <div className="navbar">
         <div className="container navbar-inner">
           <div className="logo">
-            <div className="logo-icon">A</div>
+            <div className="logo-icon">
+              <img
+                src="/mockups/barista/logo.jpg"
+                alt="Amara Logo"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  borderRadius: "50%",
+                }}
+              />
+            </div>
             <div className="logo-text">
               <h1>Amara</h1>
               <span>Coffee Machines</span>
@@ -250,13 +261,8 @@ function BaristaHeader({ variant }: { variant: BaristaVariant }) {
           height: 40px;
           border-radius: 50%;
           border: 2px solid #c49a6c;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-family: serif;
-          font-weight: 700;
-          font-size: 20px;
-          color: #1a5632;
+          overflow: hidden;
+          flex-shrink: 0;
         }
 
         .logo-text h1 {
@@ -395,12 +401,16 @@ function HomeView() {
 
         <div className="hero-visual">
           <div className="machine-placeholder">
-            <div className="machine-body">
-              <div className="group-head left"></div>
-              <div className="group-head right"></div>
-              <div className="drip-tray"></div>
-              <div className="steam-wand"></div>
-            </div>
+            <img
+              src="/mockups/barista/machine.jpg"
+              alt="Amara Professional Coffee Machine"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                borderRadius: "20px",
+              }}
+            />
             <div className="floating-card c1">
               <div className="icon">🛡️</div>
               <div className="text">
@@ -454,8 +464,16 @@ function HomeView() {
               <button className="btn btn-primary">Enquire Now</button>
             </div>
             <div className="banner-visual">
-              <div className="visual-circle"></div>
-              <div className="visual-rect"></div>
+              <img
+                src="/mockups/barista/post4.jpg"
+                alt="Complete Cafe Setup Package"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  borderRadius: "16px",
+                }}
+              />
             </div>
           </div>
         </div>
@@ -586,18 +604,10 @@ function HomeView() {
         .machine-placeholder {
           width: 300px;
           height: 240px;
-          background: #e2e8f0;
           border-radius: 20px;
           position: relative;
-          background: linear-gradient(135deg, #f1f5f9 0%, #cbd5e1 100%);
+          overflow: hidden;
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .machine-body {
-          position: absolute;
-          inset: 20px;
-          background: #94a3b8;
-          border-radius: 12px;
         }
 
         .floating-card {
@@ -768,27 +778,9 @@ function HomeView() {
           width: 200px;
           height: 150px;
           position: relative;
-        }
-
-        .visual-circle {
-          width: 100px;
-          height: 100px;
-          background: rgba(255, 255, 255, 0.1);
-          border-radius: 50%;
-          position: absolute;
-          top: 0;
-          right: 0;
-        }
-
-        .visual-rect {
-          width: 140px;
-          height: 100px;
-          background: rgba(255, 255, 255, 0.1);
-          border-radius: 12px;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          backdrop-filter: blur(5px);
+          overflow: hidden;
+          border-radius: 16px;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
 
         @media (max-width: 768px) {
@@ -854,7 +846,11 @@ function ProductsView() {
                 </span>
               )}
               <div className="product-img">
-                <div className={`img-placeholder c-${i % 3}`}></div>
+                <img
+                  src="/mockups/barista/machine.jpg"
+                  alt={item.name}
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
               </div>
               <div className="product-info">
                 <span className="brand">{item.brand}</span>
@@ -971,25 +967,7 @@ function ProductsView() {
         .product-img {
           height: 200px;
           background: #f5f5f5;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .img-placeholder {
-          width: 60%;
-          height: 60%;
-          border-radius: 8px;
-        }
-
-        .c-0 {
-          background: linear-gradient(135deg, #cbd5e1, #94a3b8);
-        }
-        .c-1 {
-          background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
-        }
-        .c-2 {
-          background: linear-gradient(135deg, #d1d5db, #9ca3af);
+          overflow: hidden;
         }
 
         .product-info {
@@ -1221,10 +1199,31 @@ function GalleryView() {
         </div>
 
         <div className="gallery-grid">
-          {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div key={i} className={`gallery-item item-${i}`}>
+          {[
+            { src: "/mockups/barista/post1.jpg", alt: "Coffee setup showcase" },
+            {
+              src: "/mockups/barista/post2.jpg",
+              alt: "Espresso machine in action",
+            },
+            { src: "/mockups/barista/post3.jpg", alt: "Cafe interior design" },
+            { src: "/mockups/barista/post4.jpg", alt: "Latte art preparation" },
+            {
+              src: "/mockups/barista/post5.jpg",
+              alt: "Coffee equipment display",
+            },
+            {
+              src: "/mockups/barista/machine.jpg",
+              alt: "Professional coffee grinder",
+            },
+          ].map((photo, i) => (
+            <div key={i} className="gallery-item">
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
               <div className="gallery-overlay">
-                <span>@cafename_{i}</span>
+                <span>@cafename_{i + 1}</span>
               </div>
             </div>
           ))}
@@ -1302,30 +1301,10 @@ function GalleryView() {
 
         .gallery-item {
           aspect-ratio: 1;
-          background: #e0e0e0;
           border-radius: 12px;
           position: relative;
           overflow: hidden;
           cursor: pointer;
-        }
-
-        .item-1 {
-          background: linear-gradient(45deg, #1a5632, #0d3b23);
-        }
-        .item-2 {
-          background: linear-gradient(45deg, #c49a6c, #a07a50);
-        }
-        .item-3 {
-          background: linear-gradient(45deg, #333, #000);
-        }
-        .item-4 {
-          background: linear-gradient(45deg, #e2e8f0, #cbd5e1);
-        }
-        .item-5 {
-          background: linear-gradient(45deg, #0d3b23, #000);
-        }
-        .item-6 {
-          background: linear-gradient(45deg, #a07a50, #806040);
         }
 
         .gallery-overlay {

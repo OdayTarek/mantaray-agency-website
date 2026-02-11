@@ -23,8 +23,8 @@ export function BazaarMockup({ variant = "home" }: BazaarMockupProps) {
             {variant === "categories" && <CategoriesView />}
             {variant === "products" && <ProductsView />}
             {variant === "branches" && <BranchesView />}
+            <BazaarFooter />
           </div>
-          <BazaarFooter />
         </div>
       </MockupFrame>
 
@@ -318,7 +318,18 @@ function BazaarHeader({ variant }: { variant: BazaarVariant }) {
     <nav className="navbar">
       <div className="nav-container">
         <div className="nav-logo">
-          <span className="logo-icon">B</span>
+          <span className="logo-icon">
+            <img
+              src="/mockups/bazaar/logo.jpg"
+              alt="بازار هب"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                borderRadius: "10px",
+              }}
+            />
+          </span>
           <span className="logo-text">BAZAAR HUB</span>
         </div>
         <ul className="nav-links">
@@ -369,18 +380,12 @@ function BazaarHeader({ variant }: { variant: BazaarVariant }) {
         .logo-icon {
           width: 40px;
           height: 40px;
-          background: linear-gradient(
-            135deg,
-            var(--purple) 0%,
-            var(--purple-dark) 100%
-          );
-          color: var(--white);
           border-radius: 10px;
+          overflow: hidden;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 22px;
-          font-weight: 900;
+          flex-shrink: 0;
         }
         .nav-links {
           display: flex;
@@ -474,6 +479,13 @@ function HomeView() {
     <div className="home-view">
       {/* Hero Section */}
       <section className="hero">
+        <div className="hero-bg">
+          <img
+            src="/mockups/bazaar/hero.jpg"
+            alt="بازار هب ستور"
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
+        </div>
         <div className="hero-shapes">
           <div className="shape shape-1"></div>
           <div className="shape shape-2"></div>
@@ -563,7 +575,18 @@ function HomeView() {
       <section className="about-section">
         <div className="about-container">
           <div className="about-image">
-            <div className="about-image-placeholder"></div>
+            <div className="about-image-placeholder">
+              <img
+                src="/mockups/bazaar/branch1.jpg"
+                alt="فرع بازار هب"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  borderRadius: "16px",
+                }}
+              />
+            </div>
             <div className="about-badge">
               <IconCalendar />
               <span>منذ أبريل 2022</span>
@@ -618,19 +641,38 @@ function HomeView() {
           </p>
           <div className="section-divider"></div>
           <div className="categories-grid">
-            {categories.map((cat: RetailCategory) => (
-              <div key={cat.id} className="category-card">
-                <div className="category-image">
-                  <div className="category-icon-wrapper">
-                    <CategoryIcon type={cat.icon} />
+            {categories.map((cat: RetailCategory, i: number) => {
+              const categoryImages: Record<string, string> = {
+                accessories: "/mockups/bazaar/products/product-25.jpg",
+                home: "/mockups/bazaar/products/product-40.jpg",
+                decor:
+                  "/mockups/bazaar/categories/%D9%82%D8%B3%D9%85%20%D8%A7%D9%84%D8%AF%D9%8A%D9%83%D9%88%D8%B1.jpg",
+                makeup: "/mockups/bazaar/products/product-50.jpg",
+                toys: "/mockups/bazaar/categories/%D9%82%D8%B3%D9%85%20%D8%A7%D9%84%D8%A7%D9%84%D8%B9%D8%A7%D8%A8.jpg",
+              };
+              const imgSrc =
+                categoryImages[cat.icon] ||
+                "/mockups/bazaar/products/product-25.jpg";
+              return (
+                <div key={cat.id} className="category-card">
+                  <div className="category-image">
+                    <img
+                      src={imgSrc}
+                      alt={cat.name}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                  <div className="category-info">
+                    <h3>{cat.name}</h3>
+                    <p>{cat.productCount} منتج</p>
                   </div>
                 </div>
-                <div className="category-info">
-                  <h3>{cat.name}</h3>
-                  <p>{cat.productCount} منتج</p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -649,38 +691,41 @@ function HomeView() {
                 caption: "أكبر تشكيلة اكسسوارات بأقل الأسعار",
                 likes: "2.4K",
                 comments: "186",
+                image: "/mockups/bazaar/products/product-25.jpg",
               },
               {
                 caption: "جديد قسم الديكور - لمسات تغير بيتك",
                 likes: "3.1K",
                 comments: "245",
+                image:
+                  "/mockups/bazaar/categories/%D9%82%D8%B3%D9%85%20%D8%A7%D9%84%D8%AF%D9%8A%D9%83%D9%88%D8%B1.jpg",
               },
               {
                 caption: "جولة في فرع بازار هب الجديد!",
                 likes: "5.8K",
                 comments: "412",
+                image: "/mockups/bazaar/branch1.jpg",
               },
               {
                 caption: "أفضل منتجات الميكب عندنا وبس",
                 likes: "4.2K",
                 comments: "327",
+                image: "/mockups/bazaar/products/product-50.jpg",
               },
             ].map((reel, i) => (
               <div key={i} className="reel-card">
-                <div
-                  className="reel-placeholder"
-                  style={{
-                    background: `linear-gradient(135deg, ${
-                      i === 0
-                        ? "#864b9e, #d4a853"
-                        : i === 1
-                          ? "#5e2d78, #a66bbe"
-                          : i === 2
-                            ? "#1a1a2e, #864b9e"
-                            : "#d4a853, #e94560"
-                    })`,
-                  }}
-                >
+                <div className="reel-placeholder">
+                  <img
+                    src={reel.image}
+                    alt={reel.caption}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      position: "absolute",
+                      inset: 0,
+                    }}
+                  />
                   <div className="reel-overlay">
                     <div className="reel-play">
                       <IconPlay />
@@ -726,13 +771,16 @@ function HomeView() {
         .hero {
           position: relative;
           padding: 80px 24px 60px;
-          background: linear-gradient(
-            135deg,
-            rgba(75, 12, 100, 0.9) 0%,
-            rgba(134, 75, 158, 0.8) 50%,
-            rgba(75, 12, 100, 0.9) 100%
-          );
+          background: var(--purple-dark);
           overflow: hidden;
+        }
+        .hero-bg {
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+        }
+        .hero-bg img {
+          display: block;
         }
         .hero-shapes {
           position: absolute;
@@ -765,10 +813,12 @@ function HomeView() {
         .hero-overlay {
           position: absolute;
           inset: 0;
+          z-index: 1;
           background: linear-gradient(
-            180deg,
-            transparent 0%,
-            rgba(26, 26, 46, 0.3) 100%
+            135deg,
+            rgba(75, 12, 100, 0.85) 0%,
+            rgba(134, 75, 158, 0.7) 50%,
+            rgba(75, 12, 100, 0.85) 100%
           );
         }
         .hero-container {
@@ -913,12 +963,8 @@ function HomeView() {
         .about-image-placeholder {
           width: 100%;
           height: 280px;
-          background: linear-gradient(
-            135deg,
-            var(--purple-bg),
-            var(--purple-light)
-          );
           border-radius: 16px;
+          overflow: hidden;
           box-shadow: 0 8px 40px rgba(134, 75, 158, 0.15);
         }
         .about-badge {
@@ -1041,28 +1087,14 @@ function HomeView() {
         }
         .category-image {
           aspect-ratio: 1;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: linear-gradient(
-            135deg,
-            var(--purple-bg),
-            rgba(166, 107, 190, 0.15)
-          );
+          overflow: hidden;
         }
-        .category-icon-wrapper {
-          width: 56px;
-          height: 56px;
-          background: linear-gradient(
-            135deg,
-            var(--purple) 0%,
-            var(--purple-dark) 100%
-          );
-          border-radius: 16px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: var(--white);
+        .category-image img {
+          display: block;
+          transition: transform 0.3s;
+        }
+        .category-card:hover .category-image img {
+          transform: scale(1.05);
         }
         .category-info {
           padding: 12px;
@@ -1103,6 +1135,7 @@ function HomeView() {
         .reel-placeholder {
           position: relative;
           aspect-ratio: 9/12;
+          overflow: hidden;
         }
         .reel-overlay {
           position: absolute;
@@ -1340,21 +1373,23 @@ function CategoriesView() {
     },
   ];
 
-  const colorPalette = [
-    "linear-gradient(135deg, #864b9e, #5e2d78)",
-    "linear-gradient(135deg, #e94560, #c23152)",
-    "linear-gradient(135deg, #d4a853, #b8922e)",
-    "linear-gradient(135deg, #a66bbe, #864b9e)",
-    "linear-gradient(135deg, #5e2d78, #3d1a52)",
-    "linear-gradient(135deg, #1a1a2e, #3d3d50)",
-    "linear-gradient(135deg, #28a745, #1e7e34)",
-    "linear-gradient(135deg, #e94560, #864b9e)",
-    "linear-gradient(135deg, #3d3d50, #1a1a2e)",
-    "linear-gradient(135deg, #d4a853, #e94560)",
-    "linear-gradient(135deg, #864b9e, #e94560)",
-    "linear-gradient(135deg, #1a1a2e, #864b9e)",
-    "linear-gradient(135deg, #5e2d78, #d4a853)",
-  ];
+  const categoryImageMap: Record<string, string> = {
+    accessories: "/mockups/bazaar/products/product-25.jpg",
+    home: "/mockups/bazaar/products/product-40.jpg",
+    decor:
+      "/mockups/bazaar/categories/%D9%82%D8%B3%D9%85%20%D8%A7%D9%84%D8%AF%D9%8A%D9%83%D9%88%D8%B1.jpg",
+    makeup: "/mockups/bazaar/products/product-50.jpg",
+    perfume: "/mockups/bazaar/products/product-60.jpg",
+    toys: "/mockups/bazaar/categories/%D9%82%D8%B3%D9%85%20%D8%A7%D9%84%D8%A7%D9%84%D8%B9%D8%A7%D8%A8.jpg",
+    tools:
+      "/mockups/bazaar/categories/%D9%82%D8%B3%D9%85%20%D8%A7%D9%84%D8%B1%D9%81%D8%A7%D9%8A%D8%B9.jpg",
+    birthday: "/mockups/bazaar/products/product-70.jpg",
+    stationery: "/mockups/bazaar/products/product-80.jpg",
+    glass: "/mockups/bazaar/products/product-90.jpg",
+    plastic: "/mockups/bazaar/products/product-40.jpg",
+    electronics: "/mockups/bazaar/products/product-60.jpg",
+    bags: "/mockups/bazaar/products/product-25.jpg",
+  };
 
   return (
     <div className="categories-view">
@@ -1364,15 +1399,17 @@ function CategoriesView() {
       </div>
       <div className="categories-container">
         <div className="categories-grid">
-          {allCategories.map((cat, i) => (
+          {allCategories.map((cat) => (
             <div key={cat.id} className="category-card">
-              <div
-                className="category-image"
-                style={{ background: colorPalette[i % colorPalette.length] }}
-              >
-                <div className="category-icon-area">
-                  <CategoryIcon type={cat.icon} />
-                </div>
+              <div className="category-image">
+                <img
+                  src={
+                    categoryImageMap[cat.icon] ||
+                    "/mockups/bazaar/products/product-25.jpg"
+                  }
+                  alt={cat.name}
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
               </div>
               <div className="category-body">
                 <h3>{cat.name}</h3>
@@ -1435,22 +1472,15 @@ function CategoriesView() {
         }
         .category-image {
           aspect-ratio: 1;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          overflow: hidden;
           position: relative;
         }
-        .category-icon-area {
-          width: 64px;
-          height: 64px;
-          background: rgba(255, 255, 255, 0.2);
-          backdrop-filter: blur(8px);
-          border-radius: 18px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: var(--white);
-          border: 1px solid rgba(255, 255, 255, 0.3);
+        .category-image img {
+          display: block;
+          transition: transform 0.3s;
+        }
+        .category-card:hover .category-image img {
+          transform: scale(1.05);
         }
         .category-body {
           padding: 14px;
@@ -1562,19 +1592,14 @@ function ProductsView() {
     "ألعاب",
   ];
 
-  const productGradients = [
-    "linear-gradient(135deg, #f8f0fc, #a66bbe)",
-    "linear-gradient(135deg, #e8e8ed, #864b9e)",
-    "linear-gradient(135deg, #d4a853, #f8f0fc)",
-    "linear-gradient(135deg, #f7f7f9, #5e2d78)",
-    "linear-gradient(135deg, #a66bbe, #f8f0fc)",
-    "linear-gradient(135deg, #f8f0fc, #d4a853)",
-    "linear-gradient(135deg, #5e2d78, #a66bbe)",
-    "linear-gradient(135deg, #d4a853, #864b9e)",
-    "linear-gradient(135deg, #f8f0fc, #e94560)",
-    "linear-gradient(135deg, #864b9e, #f8f0fc)",
-    "linear-gradient(135deg, #e8e8ed, #d4a853)",
-    "linear-gradient(135deg, #a66bbe, #e94560)",
+  const productImages = [
+    "/mockups/bazaar/products/product-25.jpg",
+    "/mockups/bazaar/products/product-40.jpg",
+    "/mockups/bazaar/products/product-50.jpg",
+    "/mockups/bazaar/products/product-60.jpg",
+    "/mockups/bazaar/products/product-70.jpg",
+    "/mockups/bazaar/products/product-80.jpg",
+    "/mockups/bazaar/products/product-90.jpg",
   ];
 
   const badgeColors: Record<string, string> = {
@@ -1611,12 +1636,12 @@ function ProductsView() {
         <div className="products-grid">
           {allProducts.map((product, i) => (
             <div key={product.id} className="product-card">
-              <div
-                className="product-image"
-                style={{
-                  background: productGradients[i % productGradients.length],
-                }}
-              >
+              <div className="product-image">
+                <img
+                  src={productImages[i % productImages.length]}
+                  alt={product.name}
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
                 {product.badge && (
                   <span
                     className="product-badge"
@@ -1745,6 +1770,14 @@ function ProductsView() {
         .product-image {
           position: relative;
           aspect-ratio: 4/3;
+          overflow: hidden;
+        }
+        .product-image img {
+          display: block;
+          transition: transform 0.3s;
+        }
+        .product-card:hover .product-image img {
+          transform: scale(1.05);
         }
         .product-badge {
           position: absolute;
@@ -1875,12 +1908,9 @@ function BranchesView() {
     },
   ];
 
-  const mapGradients = [
-    "linear-gradient(135deg, #864b9e 0%, #1a1a2e 100%)",
-    "linear-gradient(135deg, #5e2d78 0%, #d4a853 100%)",
-    "linear-gradient(135deg, #1a1a2e 0%, #a66bbe 100%)",
-    "linear-gradient(135deg, #d4a853 0%, #864b9e 100%)",
-    "linear-gradient(135deg, #a66bbe 0%, #5e2d78 100%)",
+  const branchImages = [
+    "/mockups/bazaar/branch1.jpg",
+    "/mockups/bazaar/branch2.jpg",
   ];
 
   return (
@@ -1892,26 +1922,42 @@ function BranchesView() {
 
       {/* Branch Photos */}
       <div className="branch-photos">
-        <div
-          className="branch-photo"
-          style={{
-            background:
-              "linear-gradient(135deg, var(--purple-bg), var(--purple-light))",
-          }}
-        ></div>
-        <div
-          className="branch-photo"
-          style={{
-            background:
-              "linear-gradient(135deg, var(--purple), var(--purple-dark))",
-          }}
-        ></div>
-        <div
-          className="branch-photo"
-          style={{
-            background: "linear-gradient(135deg, var(--gold), var(--purple))",
-          }}
-        ></div>
+        <div className="branch-photo">
+          <img
+            src="/mockups/bazaar/branch1.jpg"
+            alt="فرع بازار هب"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              borderRadius: "12px",
+            }}
+          />
+        </div>
+        <div className="branch-photo">
+          <img
+            src="/mockups/bazaar/branch2.jpg"
+            alt="فرع بازار هب"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              borderRadius: "12px",
+            }}
+          />
+        </div>
+        <div className="branch-photo">
+          <img
+            src="/mockups/bazaar/branch1.jpg"
+            alt="فرع بازار هب"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              borderRadius: "12px",
+            }}
+          />
+        </div>
       </div>
 
       {/* Branch Cards */}
@@ -1919,10 +1965,19 @@ function BranchesView() {
         <div className="branches-grid">
           {branchDetails.map((branch, i) => (
             <div key={branch.id} className="branch-card">
-              <div
-                className="branch-map"
-                style={{ background: mapGradients[i % mapGradients.length] }}
-              >
+              <div className="branch-map">
+                <img
+                  src={branchImages[i % branchImages.length]}
+                  alt={branch.name}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    position: "absolute",
+                    inset: 0,
+                  }}
+                />
+                <div className="branch-map-overlay"></div>
                 <div className="map-pin">
                   <IconMapMarker />
                 </div>
@@ -1984,6 +2039,7 @@ function BranchesView() {
         .branch-photo {
           height: 160px;
           border-radius: 12px;
+          overflow: hidden;
           box-shadow: 0 2px 12px rgba(134, 75, 158, 0.1);
         }
 
@@ -2018,6 +2074,13 @@ function BranchesView() {
           display: flex;
           align-items: center;
           justify-content: center;
+          overflow: hidden;
+        }
+        .branch-map-overlay {
+          position: absolute;
+          inset: 0;
+          background: rgba(94, 45, 120, 0.5);
+          z-index: 1;
         }
         .map-pin {
           width: 48px;
@@ -2031,6 +2094,8 @@ function BranchesView() {
           color: var(--white);
           border: 2px solid rgba(255, 255, 255, 0.3);
           animation: bounce 3s ease-in-out infinite;
+          z-index: 2;
+          position: relative;
         }
         @keyframes bounce {
           0%,
