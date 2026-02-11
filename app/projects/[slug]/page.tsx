@@ -134,6 +134,13 @@ const projectMeta: Record<
     tech: ["React", "Node.js", "MongoDB", "Stripe"],
     related: ["bloom", "bazaar"],
   },
+  bazaar: {
+    title: "Bazaar Hub",
+    timelineEn: "18 days",
+    timelineAr: "18 يوماً",
+    tech: ["React", "Node.js", "MongoDB", "Redis"],
+    related: ["luxe", "bloom"],
+  },
 };
 
 export default function ProjectDetailPage() {

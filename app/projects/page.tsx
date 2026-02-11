@@ -62,6 +62,13 @@ const projects = [
     timeline: "14 days",
     tech: ["React", "Node.js", "MongoDB"],
   },
+  {
+    slug: "bazaar",
+    titleKey: 8,
+    industry: "retail",
+    timeline: "18 days",
+    tech: ["React", "Node.js", "MongoDB"],
+  },
 ];
 
 const projectNames = {
@@ -74,6 +81,7 @@ const projectNames = {
     "Medix Telehealth",
     "Barista Pro",
     "Luxe Threads",
+    "Bazaar Hub",
   ],
   ar: [
     "بولس المصرفي",
@@ -84,6 +92,7 @@ const projectNames = {
     "ميديكس للطب عن بعد",
     "باريستا برو",
     "لوكس ثريدز",
+    "بازار هب",
   ],
 };
 
@@ -97,6 +106,7 @@ const projectDescriptions = {
     "Telemedicine platform connecting patients with healthcare providers.",
     "Premium B2B platform for commercial coffee equipment sales, maintenance, and barista training.",
     "Boutique fashion e-commerce platform with curated collections, same-day delivery, and personalized shopping experience.",
+    "Multi-branch retail marketplace platform with unified inventory, category management, and branch locator for a seamless shopping experience.",
   ],
   ar: [
     "لوحة تحكم حديثة مع تحليلات فورية ورؤى مدعومة بالذكاء الاصطناعي للمؤسسات المالية.",
@@ -107,6 +117,7 @@ const projectDescriptions = {
     "منصة الطب عن بعد تربط المرضى بمقدمي الرعاية الصحية.",
     "منصة B2B متخصصة في بيع معدات القهوة التجارية والصيانة وتدريب الباريستا.",
     "منصة أزياء إلكترونية فاخرة مع مجموعات مختارة بعناية وتوصيل في نفس اليوم وتجربة تسوق شخصية.",
+    "منصة تسوق متعددة الفروع مع إدارة موحدة للمخزون والفئات ومحدد الفروع لتجربة تسوق سلسة.",
   ],
 };
 
@@ -123,6 +134,7 @@ export default function ProjectsPage() {
     { key: "fitness", label: t.projectsPage.industries.fitness },
     { key: "healthcare", label: t.projectsPage.industries.healthcare },
     { key: "b2b", label: t.projectsPage.industries.b2b },
+    { key: "retail", label: t.projectsPage.industries.retail },
   ];
 
   const filteredProjects =

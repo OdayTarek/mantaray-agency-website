@@ -164,6 +164,7 @@ export const translations = {
         fashion: "Fashion",
         fitness: "Fitness",
         b2b: "B2B",
+        retail: "Retail",
       },
       stats: {
         projects: { value: "50+", label: "Projects" },
@@ -461,6 +462,40 @@ export const translations = {
               title: "Local Delivery",
               description:
                 "Same-day delivery integration for select areas with real-time order tracking.",
+            },
+          ],
+        },
+        bazaar: {
+          title: "Bazaar Hub",
+          industry: "Retail",
+          description:
+            "Multi-branch retail marketplace platform with unified pricing, 13+ product categories, and 5 branch locations across Cairo.",
+          challenge:
+            "A rapidly growing retail chain with 5 branches needed a unified digital presence that could showcase their massive 10,000+ product catalog across 13 categories while maintaining consistent pricing and helping customers locate their nearest branch.",
+          approach:
+            "We designed an RTL-first marketplace experience with a category-driven navigation system, unified product catalog with real-time pricing, and an interactive branch locator with detailed location information.",
+          solution:
+            "We built a comprehensive retail marketplace platform with category management, product filtering, branch locator with map integration, and social media content integration to drive engagement and foot traffic to physical stores.",
+          capabilities: [
+            {
+              title: "Category Management",
+              description:
+                "13+ organized product departments with icon-based navigation and product count tracking.",
+            },
+            {
+              title: "Unified Pricing",
+              description:
+                "Consistent pricing across all 5 branches with real-time inventory synchronization.",
+            },
+            {
+              title: "Branch Locator",
+              description:
+                "Interactive branch finder with detailed addresses, contact info, and operating hours for all locations.",
+            },
+            {
+              title: "Social Integration",
+              description:
+                "Instagram and Facebook content feeds with engagement metrics to drive online-to-offline traffic.",
             },
           ],
         },
@@ -794,6 +829,7 @@ export const translations = {
         fashion: "أزياء",
         fitness: "اللياقة البدنية",
         b2b: "أعمال",
+        retail: "تجزئة",
       },
       stats: {
         projects: { value: "+50", label: "مشروع" },
@@ -1088,6 +1124,40 @@ export const translations = {
               title: "توصيل محلي",
               description:
                 "دمج خدمة التوصيل في نفس اليوم لمناطق مختارة مع تتبع الطلبات في الوقت الفعلي.",
+            },
+          ],
+        },
+        bazaar: {
+          title: "بازار هب",
+          industry: "تجزئة",
+          description:
+            "منصة تسوق متعددة الفروع مع أسعار موحدة وأكثر من 13 قسم للمنتجات و5 فروع منتشرة في القاهرة.",
+          challenge:
+            "سلسلة متاجر سريعة النمو بـ 5 فروع احتاجت إلى حضور رقمي موحد يعرض كتالوج منتجاتها الضخم الذي يتجاوز 10,000 منتج عبر 13 قسم مع الحفاظ على أسعار موحدة ومساعدة العملاء في تحديد أقرب فرع.",
+          approach:
+            "صممنا تجربة سوق عربية بالكامل مع نظام تنقل قائم على الأقسام، وكتالوج منتجات موحد مع أسعار فورية، ومحدد فروع تفاعلي مع معلومات تفصيلية عن المواقع.",
+          solution:
+            "أطلقنا منصة تسوق شاملة مع إدارة الأقسام، وتصفية المنتجات، ومحدد الفروع مع دمج الخرائط، ودمج محتوى السوشيال ميديا لزيادة التفاعل وحركة الزوار للمتاجر الفعلية.",
+          capabilities: [
+            {
+              title: "إدارة الأقسام",
+              description:
+                "أكثر من 13 قسم منظم مع تنقل بالأيقونات وتتبع عدد المنتجات.",
+            },
+            {
+              title: "أسعار موحدة",
+              description:
+                "أسعار متسقة عبر جميع الفروع الخمسة مع مزامنة المخزون في الوقت الفعلي.",
+            },
+            {
+              title: "محدد الفروع",
+              description:
+                "محدد فروع تفاعلي مع عناوين تفصيلية ومعلومات الاتصال وساعات العمل لجميع المواقع.",
+            },
+            {
+              title: "دمج السوشيال ميديا",
+              description:
+                "محتوى إنستغرام وفيسبوك مع مقاييس التفاعل لزيادة حركة الزوار من الإنترنت إلى المتاجر.",
             },
           ],
         },
