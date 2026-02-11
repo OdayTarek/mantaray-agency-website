@@ -76,6 +76,13 @@ const projects = [
     timeline: "20 days",
     tech: ["Next.js", "React", "Mapbox"],
   },
+  {
+    slug: "alpine",
+    titleKey: 10,
+    industry: "hospitality",
+    timeline: "18 days",
+    tech: ["Next.js", "React", "Stripe"],
+  },
 ];
 
 const projectNames = {
@@ -90,6 +97,7 @@ const projectNames = {
     "Luxe Threads",
     "Bazaar Hub",
     "Haven Retreats",
+    "Alpine Lodge",
   ],
   ar: [
     "بولس المصرفي",
@@ -102,6 +110,7 @@ const projectNames = {
     "لوكس ثريدز",
     "بازار هب",
     "هافن ريتريتس",
+    "ألباين لودج",
   ],
 };
 
@@ -117,6 +126,7 @@ const projectDescriptions = {
     "Boutique fashion e-commerce platform with curated collections, same-day delivery, and personalized shopping experience.",
     "Multi-branch retail marketplace platform with unified inventory, category management, and branch locator for a seamless shopping experience.",
     "Luxury desert retreat booking platform with cabin selection, amenity showcases, and immersive nature experiences.",
+    "Dark luxury hospitality platform with European-inspired cabin showcases, photo galleries, and premium booking experience.",
   ],
   ar: [
     "لوحة تحكم حديثة مع تحليلات فورية ورؤى مدعومة بالذكاء الاصطناعي للمؤسسات المالية.",
@@ -129,6 +139,7 @@ const projectDescriptions = {
     "منصة أزياء إلكترونية فاخرة مع مجموعات مختارة بعناية وتوصيل في نفس اليوم وتجربة تسوق شخصية.",
     "منصة تسوق متعددة الفروع مع إدارة موحدة للمخزون والفئات ومحدد الفروع لتجربة تسوق سلسة.",
     "منصة حجز منتجعات صحراوية فاخرة مع اختيار الأكواخ وعرض المرافق وتجارب طبيعية غامرة.",
+    "منصة ضيافة فاخرة بتصميم أوروبي مع عرض الأكواخ ومعارض الصور وتجربة حجز متميزة.",
   ],
 };
 

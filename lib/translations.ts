@@ -534,6 +534,40 @@ export const translations = {
             },
           ],
         },
+        alpine: {
+          title: "Alpine Lodge",
+          industry: "Hospitality",
+          description:
+            "Dark luxury hospitality platform with European-inspired cabin showcases, photo galleries, and premium booking experience.",
+          challenge:
+            "A premium cabin retreat needed a second digital presence targeting a different audience segment — one that emphasized dark luxury aesthetics and European sophistication while showcasing the same property through an entirely different visual lens.",
+          approach:
+            "We crafted a moody, dark-themed experience with rich brown and gold accents, Palatino serif typography, and cinematic gradient imagery that evokes the warmth of a European alpine lodge while maintaining the premium booking functionality.",
+          solution:
+            "We delivered a visually distinct hospitality platform with immersive hero sections, dark-themed cabin cards with gold accents, mosaic photo galleries with hover reveals, and a comprehensive contact system with location details and house rules.",
+          capabilities: [
+            {
+              title: "Dark Luxury Aesthetic",
+              description:
+                "Moody dark theme with rich brown and gold accents creating an atmosphere of European sophistication and warmth.",
+            },
+            {
+              title: "Cabin Showcase",
+              description:
+                "Dark-themed cabin cards with pricing, amenity tags, and privacy badges for easy comparison across accommodation types.",
+            },
+            {
+              title: "Photo Gallery Mosaic",
+              description:
+                "CSS-driven mosaic gallery with hover overlays and captions capturing the architectural beauty of the retreat.",
+            },
+            {
+              title: "Contact & Booking Hub",
+              description:
+                "Comprehensive contact section with location details, operating hours, house rules, and multi-channel communication options.",
+            },
+          ],
+        },
       },
     },
 
@@ -1228,6 +1262,40 @@ export const translations = {
               title: "نظام الحجز",
               description:
                 "نظام استفسار وحجز مبسط مع قواعد الإقامة وخيارات التواصل ودعم ثنائي اللغة.",
+            },
+          ],
+        },
+        alpine: {
+          title: "ألباين لودج",
+          industry: "ضيافة",
+          description:
+            "منصة ضيافة فاخرة بتصميم أوروبي مع عرض الأكواخ ومعارض الصور وتجربة حجز متميزة.",
+          challenge:
+            "منتجع أكواخ فاخر احتاج إلى حضور رقمي ثانٍ يستهدف شريحة مختلفة من الجمهور — يركز على جماليات الفخامة الداكنة والأناقة الأوروبية مع عرض نفس العقار من منظور بصري مختلف تماماً.",
+          approach:
+            "صممنا تجربة داكنة وأنيقة بألوان بنية غنية ولمسات ذهبية وخطوط بالاتينو الأنيقة وصور متدرجة سينمائية تستحضر دفء لودج جبال الألب الأوروبي مع الحفاظ على وظائف الحجز المتميزة.",
+          solution:
+            "قدمنا منصة ضيافة متميزة بصرياً مع أقسام بطولية غامرة وبطاقات أكواخ بتصميم داكن مع لمسات ذهبية ومعارض صور فسيفسائية مع تأثيرات تمرير ونظام تواصل شامل مع تفاصيل الموقع وقواعد الإقامة.",
+          capabilities: [
+            {
+              title: "جمالية الفخامة الداكنة",
+              description:
+                "تصميم داكن أنيق بألوان بنية غنية ولمسات ذهبية تخلق أجواء من الأناقة الأوروبية والدفء.",
+            },
+            {
+              title: "عرض الأكواخ",
+              description:
+                "بطاقات أكواخ بتصميم داكن مع الأسعار وعلامات المرافق وشارات الخصوصية لسهولة المقارنة بين أنواع الإقامة.",
+            },
+            {
+              title: "معرض صور فسيفسائي",
+              description:
+                "معرض فسيفسائي بتقنية CSS مع تأثيرات تمرير وتعليقات تلتقط الجمال المعماري للمنتجع.",
+            },
+            {
+              title: "مركز التواصل والحجز",
+              description:
+                "قسم تواصل شامل مع تفاصيل الموقع وساعات العمل وقواعد الإقامة وخيارات تواصل متعددة القنوات.",
             },
           ],
         },

@@ -148,6 +148,13 @@ const projectMeta: Record<
     tech: ["Next.js", "React", "Mapbox", "Stripe"],
     related: ["nomad", "barista"],
   },
+  alpine: {
+    title: "Alpine Lodge",
+    timelineEn: "18 days",
+    timelineAr: "18 يوماً",
+    tech: ["Next.js", "React", "Stripe", "Mapbox"],
+    related: ["haven", "nomad"],
+  },
 };
 
 export default function ProjectDetailPage() {
