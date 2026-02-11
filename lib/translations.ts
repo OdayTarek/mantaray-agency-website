@@ -77,15 +77,16 @@ export const translations = {
             "Modern expense tracking platform with automated reporting and team workflows.",
         },
         {
-          tag: "E-commerce",
-          title: "Bloom Marketplace",
+          tag: "Hospitality",
+          title: "Haven Retreats",
           description:
-            "Headless commerce platform with AR product visualization.",
+            "Luxury desert retreat booking platform with cabin showcases and immersive experiences.",
         },
         {
-          tag: "SaaS",
-          title: "Atlas CRM",
-          description: "AI-driven customer relationship management platform.",
+          tag: "Fashion",
+          title: "Luxe Threads",
+          description:
+            "Boutique fashion e-commerce with curated collections and personalized shopping.",
         },
       ],
     },
@@ -812,14 +813,16 @@ export const translations = {
             "منصة حديثة لتتبع المصروفات مع التقارير الآلية وسير عمل الفريق.",
         },
         {
-          tag: "التجارة الإلكترونية",
-          title: "سوق بلوم",
-          description: "منصة تجارة إلكترونية مع تصور المنتجات بالواقع المعزز.",
+          tag: "ضيافة",
+          title: "هافن ريتريتس",
+          description:
+            "منصة حجز منتجعات صحراوية فاخرة مع عرض الأكواخ وتجارب غامرة.",
         },
         {
-          tag: "البرمجيات كخدمة",
-          title: "أطلس CRM",
-          description: "منصة إدارة علاقات العملاء مدعومة بالذكاء الاصطناعي.",
+          tag: "أزياء",
+          title: "لوكس ثريدز",
+          description:
+            "منصة أزياء إلكترونية فاخرة مع مجموعات مختارة وتجربة تسوق شخصية.",
         },
       ],
     },
