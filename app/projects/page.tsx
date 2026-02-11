@@ -156,6 +156,7 @@ export default function ProjectsPage() {
     { key: "fitness", label: t.projectsPage.industries.fitness },
     { key: "healthcare", label: t.projectsPage.industries.healthcare },
     { key: "b2b", label: t.projectsPage.industries.b2b },
+    { key: "fashion", label: t.projectsPage.industries.fashion },
     { key: "retail", label: t.projectsPage.industries.retail },
     { key: "hospitality", label: t.projectsPage.industries.hospitality },
   ];
