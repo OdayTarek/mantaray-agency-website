@@ -69,6 +69,13 @@ const projects = [
     timeline: "18 days",
     tech: ["React", "Node.js", "MongoDB"],
   },
+  {
+    slug: "haven",
+    titleKey: 9,
+    industry: "hospitality",
+    timeline: "20 days",
+    tech: ["Next.js", "React", "Mapbox"],
+  },
 ];
 
 const projectNames = {
@@ -82,6 +89,7 @@ const projectNames = {
     "Barista Pro",
     "Luxe Threads",
     "Bazaar Hub",
+    "Haven Retreats",
   ],
   ar: [
     "بولس المصرفي",
@@ -93,6 +101,7 @@ const projectNames = {
     "باريستا برو",
     "لوكس ثريدز",
     "بازار هب",
+    "هافن ريتريتس",
   ],
 };
 
@@ -107,6 +116,7 @@ const projectDescriptions = {
     "Premium B2B platform for commercial coffee equipment sales, maintenance, and barista training.",
     "Boutique fashion e-commerce platform with curated collections, same-day delivery, and personalized shopping experience.",
     "Multi-branch retail marketplace platform with unified inventory, category management, and branch locator for a seamless shopping experience.",
+    "Luxury desert retreat booking platform with cabin selection, amenity showcases, and immersive nature experiences.",
   ],
   ar: [
     "لوحة تحكم حديثة مع تحليلات فورية ورؤى مدعومة بالذكاء الاصطناعي للمؤسسات المالية.",
@@ -118,6 +128,7 @@ const projectDescriptions = {
     "منصة B2B متخصصة في بيع معدات القهوة التجارية والصيانة وتدريب الباريستا.",
     "منصة أزياء إلكترونية فاخرة مع مجموعات مختارة بعناية وتوصيل في نفس اليوم وتجربة تسوق شخصية.",
     "منصة تسوق متعددة الفروع مع إدارة موحدة للمخزون والفئات ومحدد الفروع لتجربة تسوق سلسة.",
+    "منصة حجز منتجعات صحراوية فاخرة مع اختيار الأكواخ وعرض المرافق وتجارب طبيعية غامرة.",
   ],
 };
 
@@ -135,6 +146,7 @@ export default function ProjectsPage() {
     { key: "healthcare", label: t.projectsPage.industries.healthcare },
     { key: "b2b", label: t.projectsPage.industries.b2b },
     { key: "retail", label: t.projectsPage.industries.retail },
+    { key: "hospitality", label: t.projectsPage.industries.hospitality },
   ];
 
   const filteredProjects =

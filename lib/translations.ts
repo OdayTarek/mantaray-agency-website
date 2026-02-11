@@ -165,6 +165,7 @@ export const translations = {
         fitness: "Fitness",
         b2b: "B2B",
         retail: "Retail",
+        hospitality: "Hospitality",
       },
       stats: {
         projects: { value: "50+", label: "Projects" },
@@ -499,6 +500,40 @@ export const translations = {
             },
           ],
         },
+        haven: {
+          title: "Haven Retreats",
+          industry: "Hospitality",
+          description:
+            "Luxury desert retreat booking platform with cabin selection, amenity showcases, and immersive nature experiences.",
+          challenge:
+            "A boutique desert retreat needed a digital presence that could convey the serenity and luxury of their off-grid cabins while handling cabin comparisons, amenity showcases, and booking inquiries in a way that matched their premium brand identity.",
+          approach:
+            "We designed a nature-inspired digital experience with earthy tones, serif typography, and immersive layouts that mirror the tranquility of the retreat while providing practical booking and cabin comparison tools.",
+          solution:
+            "We built a premium hospitality platform with interactive cabin cards, detailed amenity grids, photo gallery mosaics, and a streamlined booking inquiry flow that captures the essence of luxury desert living.",
+          capabilities: [
+            {
+              title: "Cabin Showcase",
+              description:
+                "Interactive cabin cards with capacity, pricing, and feature highlights for easy comparison across accommodation types.",
+            },
+            {
+              title: "Amenity Explorer",
+              description:
+                "Visual amenity grid showcasing pool, spa, dining, and outdoor experiences with descriptive detail.",
+            },
+            {
+              title: "Photo Gallery",
+              description:
+                "Mosaic-style photo gallery with hover effects capturing the retreat atmosphere and natural surroundings.",
+            },
+            {
+              title: "Booking Flow",
+              description:
+                "Streamlined inquiry and booking system with house rules, contact options, and bilingual support.",
+            },
+          ],
+        },
       },
     },
 
@@ -830,6 +865,7 @@ export const translations = {
         fitness: "اللياقة البدنية",
         b2b: "أعمال",
         retail: "تجزئة",
+        hospitality: "ضيافة",
       },
       stats: {
         projects: { value: "+50", label: "مشروع" },
@@ -1158,6 +1194,40 @@ export const translations = {
               title: "دمج السوشيال ميديا",
               description:
                 "محتوى إنستغرام وفيسبوك مع مقاييس التفاعل لزيادة حركة الزوار من الإنترنت إلى المتاجر.",
+            },
+          ],
+        },
+        haven: {
+          title: "هافن ريتريتس",
+          industry: "ضيافة",
+          description:
+            "منصة حجز منتجعات صحراوية فاخرة مع اختيار الأكواخ وعرض المرافق وتجارب طبيعية غامرة.",
+          challenge:
+            "منتجع صحراوي فاخر احتاج إلى حضور رقمي ينقل هدوء وفخامة أكواخه المنعزلة مع التعامل مع مقارنات الأكواخ وعرض المرافق واستفسارات الحجز بطريقة تتناسب مع هوية علامته التجارية الراقية.",
+          approach:
+            "صممنا تجربة رقمية مستوحاة من الطبيعة بألوان ترابية وخطوط أنيقة وتصميمات غامرة تعكس هدوء المنتجع مع توفير أدوات عملية للحجز ومقارنة الأكواخ.",
+          solution:
+            "بنينا منصة ضيافة فاخرة مع بطاقات أكواخ تفاعلية وشبكات مرافق مفصلة ومعرض صور فسيفسائي وتدفق حجز مبسط يجسد جوهر الحياة الصحراوية الفاخرة.",
+          capabilities: [
+            {
+              title: "عرض الأكواخ",
+              description:
+                "بطاقات أكواخ تفاعلية مع السعة والأسعار وأبرز الميزات لسهولة المقارنة بين أنواع الإقامة.",
+            },
+            {
+              title: "استكشاف المرافق",
+              description:
+                "شبكة مرافق بصرية تعرض المسبح والسبا والمطاعم والتجارب الخارجية مع تفاصيل وصفية.",
+            },
+            {
+              title: "معرض الصور",
+              description:
+                "معرض صور فسيفسائي مع تأثيرات تمرير يلتقط أجواء المنتجع والمحيط الطبيعي.",
+            },
+            {
+              title: "نظام الحجز",
+              description:
+                "نظام استفسار وحجز مبسط مع قواعد الإقامة وخيارات التواصل ودعم ثنائي اللغة.",
             },
           ],
         },

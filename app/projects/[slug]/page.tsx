@@ -141,6 +141,13 @@ const projectMeta: Record<
     tech: ["React", "Node.js", "MongoDB", "Redis"],
     related: ["luxe", "bloom"],
   },
+  haven: {
+    title: "Haven Retreats",
+    timelineEn: "20 days",
+    timelineAr: "20 يوماً",
+    tech: ["Next.js", "React", "Mapbox", "Stripe"],
+    related: ["nomad", "barista"],
+  },
 };
 
 export default function ProjectDetailPage() {
