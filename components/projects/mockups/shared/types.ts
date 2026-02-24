@@ -305,3 +305,229 @@ export const medixVariants: MockupVariant[] = [
   { id: 'consultation', label: 'Consultation' },
   { id: 'records', label: 'Records' },
 ]
+// B2B (Barista Pro) data types
+export interface B2BData {
+  equipment: Equipment[]
+  services: Service[]
+  brands: Brand[]
+}
+
+export interface Equipment {
+  id: string
+  name: string
+  brand: string
+  price: string
+  rating: number
+  badge?: string
+  category: string
+}
+
+export interface Service {
+  id: string
+  name: string
+  description: string
+  icon: string
+}
+
+export interface Brand {
+  id: string
+  name: string
+}
+
+// Fashion (Luxe Threads) data types
+export interface FashionData {
+  products: FashionProduct[]
+  cart: CartItem[]
+}
+
+export interface FashionProduct {
+  id: string
+  name: string
+  price: string
+  sizes: string[]
+  brand: string
+  badge?: string
+  category: string
+}
+
+export interface CartItem {
+  id: string
+  productId: string
+  quantity: number
+  size: string
+}
+
+// Retail (Bazaar Hub) data types
+export interface RetailData {
+  categories: RetailCategory[]
+  products: RetailProduct[]
+  branches: Branch[]
+}
+
+export interface RetailCategory {
+  id: string
+  name: string
+  productCount: number
+  icon: string
+}
+
+export interface RetailProduct {
+  id: string
+  name: string
+  price: string
+  badge?: string
+  category: string
+}
+
+export interface Branch {
+  id: string
+  name: string
+  area: string
+  city: string
+}
+
+// Hospitality (Haven Retreats + Alpine Lodge) data types
+export interface HospitalityData {
+  cabins: Cabin[]
+  amenities: Amenity[]
+}
+
+export interface Cabin {
+  id: string
+  name: string
+  bedrooms: number
+  pricePerNight: string
+  features: string[]
+  badge?: string
+}
+
+export interface Amenity {
+  id: string
+  name: string
+  description: string
+  icon: string
+}
+
+// Seeded data for all new mockups
+export const baristaData: B2BData = {
+  equipment: [
+    { id: '1', name: 'Verde 2-Group Espresso Machine', brand: 'Sanremo', price: 'EGP 185,000', rating: 5.0, badge: 'Best Seller', category: 'Espresso Machines' },
+    { id: '2', name: 'Verde 3-Group Commercial', brand: 'Sanremo', price: 'EGP 210,000', rating: 4.5, badge: 'New', category: 'Espresso Machines' },
+    { id: '3', name: 'M200 2-Group Espresso Machine', brand: 'La Cimbali', price: 'EGP 165,000', rating: 4.0, badge: 'Sale', category: 'Espresso Machines' },
+    { id: '4', name: 'Major V Electronic Grinder', brand: 'Mazzer', price: 'EGP 38,900', rating: 5.0, badge: 'Best Seller', category: 'Grinders' },
+    { id: '5', name: 'Professional Blender Pro', brand: 'Vitamix', price: 'EGP 12,500', rating: 4.8, category: 'Blenders' },
+  ],
+  services: [
+    { id: '1', name: 'Equipment Sales', description: 'Wide range of premium coffee machines, grinders, blenders', icon: 'store' },
+    { id: '2', name: 'Maintenance & Repair', description: 'Regular maintenance contracts and emergency repairs', icon: 'tools' },
+    { id: '3', name: 'Barista Training', description: 'Professional barista training programs', icon: 'graduation-cap' },
+  ],
+  brands: [
+    { id: '1', name: 'Sanremo' },
+    { id: '2', name: 'La Cimbali' },
+    { id: '3', name: 'Wega' },
+    { id: '4', name: 'Mazzer' },
+    { id: '5', name: 'Vitamix' },
+  ],
+}
+
+export const luxeData: FashionData = {
+  products: [
+    { id: '1', name: 'Silk Evening Dress', price: '2,499 EGP', sizes: ['S', 'M', 'L'], brand: 'Luxe', badge: 'Best Seller', category: 'Dresses' },
+    { id: '2', name: 'Cashmere Sweater', price: '1,899 EGP', sizes: ['S', 'M', 'L', 'XL'], brand: 'Luxe', badge: 'New', category: 'Tops' },
+    { id: '3', name: 'Leather Handbag', price: '3,299 EGP', sizes: ['One Size'], brand: 'Luxe', category: 'Accessories' },
+    { id: '4', name: 'Tailored Blazer', price: '2,799 EGP', sizes: ['S', 'M', 'L'], brand: 'Luxe', category: 'Outerwear' },
+  ],
+  cart: [
+    { id: '1', productId: '1', quantity: 1, size: 'M' },
+    { id: '2', productId: '3', quantity: 1, size: 'One Size' },
+  ],
+}
+
+export const bazaarData: RetailData = {
+  categories: [
+    { id: '1', name: 'اكسسوارات', productCount: 250, icon: 'accessories' },
+    { id: '2', name: 'أدوات منزلية', productCount: 180, icon: 'home' },
+    { id: '3', name: 'ديكور', productCount: 120, icon: 'decor' },
+    { id: '4', name: 'ميكب', productCount: 95, icon: 'makeup' },
+    { id: '5', name: 'ألعاب', productCount: 140, icon: 'toys' },
+  ],
+  products: [
+    { id: '1', name: 'Wireless Headphones', price: '299 EGP', badge: 'Best Seller', category: 'اكسسوارات' },
+    { id: '2', name: 'Kitchen Organizer Set', price: '149 EGP', badge: 'New', category: 'أدوات منزلية' },
+    { id: '3', name: 'Wall Art Canvas', price: '399 EGP', category: 'ديكور' },
+    { id: '4', name: 'Makeup Brush Set', price: '249 EGP', badge: 'Sale', category: 'ميكب' },
+  ],
+  branches: [
+    { id: '1', name: 'فرع مصر الجديدة', area: 'Heliopolis', city: 'Cairo' },
+    { id: '2', name: 'فرع المعادي', area: 'Maadi', city: 'Cairo' },
+    { id: '3', name: 'فرع الدقي', area: 'Dokki', city: 'Giza' },
+    { id: '4', name: 'فرع المقطم', area: 'Mokattam', city: 'Cairo' },
+    { id: '5', name: 'فرع عباس العقاد', area: 'Nasr City', city: 'Cairo' },
+  ],
+}
+
+export const havenData: HospitalityData = {
+  cabins: [
+    { id: '1', name: 'Cabin 1', bedrooms: 3, pricePerNight: '12,000 EGP', features: ['Indoor Heated Pool', 'Outdoor Heated Pool', '100% Privacy'], badge: 'Best Seller' },
+    { id: '2', name: 'Cabin 2', bedrooms: 4, pricePerNight: '7,000 EGP', features: ['5 Bathrooms', 'Swimming Pool', '100% Privacy'], badge: 'Best Value' },
+    { id: '3', name: 'Cabin 3', bedrooms: 3, pricePerNight: '11,000 EGP', features: ['Indoor Heated Pool', '100% Privacy'] },
+    { id: '4', name: 'Cabin 4', bedrooms: 4, pricePerNight: '15,000 EGP', features: ['Heated Glass Pool', 'Jacuzzi', '100% Privacy'], badge: 'Premium' },
+  ],
+  amenities: [
+    { id: '1', name: 'Heated Pools', description: 'Indoor & outdoor options', icon: 'pool' },
+    { id: '2', name: '100% Privacy', description: 'Fully private compounds', icon: 'lock' },
+    { id: '3', name: 'European Design', description: 'Stylish interiors', icon: 'home' },
+    { id: '4', name: 'Families Welcome', description: 'Up to 8 guests', icon: 'users' },
+  ],
+}
+
+export const alpineData: HospitalityData = {
+  cabins: [
+    { id: '1', name: 'Alpine Suite', bedrooms: 2, pricePerNight: '9,500 EGP', features: ['Mountain View', 'Heated Pool', 'Fireplace'], badge: 'Best Seller' },
+    { id: '2', name: 'Mountain Lodge', bedrooms: 3, pricePerNight: '12,500 EGP', features: ['Panoramic View', 'Hot Tub', 'Ski Storage'], badge: 'Premium' },
+    { id: '3', name: 'Forest Cabin', bedrooms: 2, pricePerNight: '8,000 EGP', features: ['Forest View', 'Outdoor Deck', 'BBQ Area'], badge: 'Best Value' },
+  ],
+  amenities: [
+    { id: '1', name: 'Mountain Views', description: 'Breathtaking scenery', icon: 'mountain' },
+    { id: '2', name: 'Heated Pools', description: 'Year-round swimming', icon: 'pool' },
+    { id: '3', name: 'Ski Access', description: 'Direct slope access', icon: 'ski' },
+    { id: '4', name: 'Cozy Fireplaces', description: 'Wood-burning warmth', icon: 'fire' },
+  ],
+}
+
+// Variant configurations for new projects
+export const baristaVariants: MockupVariant[] = [
+  { id: 'home', label: 'Home' },
+  { id: 'products', label: 'Products' },
+  { id: 'services', label: 'Services' },
+  { id: 'gallery', label: 'Gallery' },
+]
+
+export const luxeVariants: MockupVariant[] = [
+  { id: 'home', label: 'Home' },
+  { id: 'products', label: 'Products' },
+  { id: 'cart', label: 'Cart' },
+  { id: 'checkout', label: 'Checkout' },
+]
+
+export const bazaarVariants: MockupVariant[] = [
+  { id: 'home', label: 'Home' },
+  { id: 'categories', label: 'Categories' },
+  { id: 'products', label: 'Products' },
+  { id: 'branches', label: 'Branches' },
+]
+
+export const havenVariants: MockupVariant[] = [
+  { id: 'home', label: 'Home' },
+  { id: 'cabins', label: 'Cabins' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'booking', label: 'Booking' },
+]
+
+export const alpineVariants: MockupVariant[] = [
+  { id: 'home', label: 'Home' },
+  { id: 'cabins', label: 'Cabins' },
+  { id: 'gallery', label: 'Gallery' },
+  { id: 'contact', label: 'Contact' },
+]
